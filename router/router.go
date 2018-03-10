@@ -9,7 +9,7 @@ import (
 func Init(){
 	gin := gin.Default()
 	//用户
-	gin.GET("/login",user.Login)
+	gin.GET("/user/login",user.Login)
 	gin.GET("/userInfo",user.Info)
 	gin.Run(":8888")
 }
