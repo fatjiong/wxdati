@@ -69,7 +69,7 @@ App({
               wx.setStorageSync('userInfo', info.userInfo);
               that.globalData.userInfo = info.userInfo;
               typeof cb == "function" && cb(that.globalData.userInfo)
-              // 请求自己的服务器 
+              // 请求自己的服务器
               Login(code, info.userInfo);
             },fail:function(e){
               console.log(e);

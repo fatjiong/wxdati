@@ -17,39 +17,39 @@ Page({
         })
       }
     })
-    try{
-      var value = wx.getStorageSync('cateList')
-      if(value){
-        that.setData({
-          list: value,
-        });
-      }else{
-        var url = app.globalData.categoryUrl;
-        https.get(url,
-          function (res) {
-            that.setData({
-              list: res.Data,
-            });
-            wx.setStorage({
-              key: "cateList",
-              data: res.Data
-            })
-            wx.setStorage({
-              key: "cateListTime",
-              data: new Date((new Date() / 1000 + 86400) * 1000).getTime()
-            })
-          }, function (res) {
-            console.log(res);
-          });
-      }
-    } catch (e){
-    }
-  },
-  toList:function(e){
-    wx.navigateTo({
-      url: `../list/list?keyword=${e.currentTarget.dataset.cat}`
-    });
-  },
+  //   try{
+  //     var value = wx.getStorageSync('cateList')
+  //     if(value){
+  //       that.setData({
+  //         list: value,
+  //       });
+  //     }else{
+  //       var url = app.globalData.categoryUrl;
+  //       https.get(url,
+  //         function (res) {
+  //           that.setData({
+  //             list: res.Data,
+  //           });
+  //           wx.setStorage({
+  //             key: "cateList",
+  //             data: res.Data
+  //           })
+  //           wx.setStorage({
+  //             key: "cateListTime",
+  //             data: new Date((new Date() / 1000 + 86400) * 1000).getTime()
+  //           })
+  //         }, function (res) {
+  //           console.log(res);
+  //         });
+  //     }
+  //   } catch (e){
+  //   }
+  // },
+  // toList:function(e){
+  //   wx.navigateTo({
+  //     url: `../list/list?keyword=${e.currentTarget.dataset.cat}`
+  //   });
+  // },
   onReady: function () {
     // 页面渲染完成
   },

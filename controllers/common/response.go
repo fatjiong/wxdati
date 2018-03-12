@@ -16,7 +16,7 @@ func Error(msg string,c *gin.Context) {
 }
 
 //成功方法
-func success(msg string,data gin.H,c *gin.Context){
+func Success(msg string,data *gin.H,c *gin.Context){
 	c.JSON(http.StatusOK,gin.H{
 		"code":model.ErrorCode.SUCCESS,
 		"message":msg,
